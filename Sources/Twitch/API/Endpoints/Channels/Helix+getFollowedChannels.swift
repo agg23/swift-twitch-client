@@ -41,10 +41,10 @@ extension Helix {
 }
 
 public struct Follow: Decodable {
-  let broadcasterId: String
-  let broadcasterLogin: String
-  let broadcasterName: String
-  let followedAt: Date
+  public let broadcasterId: String
+  public let broadcasterLogin: String
+  public let broadcasterName: String
+  public let followedAt: Date
 
   enum CodingKeys: String, CodingKey {
     case broadcasterId = "broadcaster_id"
