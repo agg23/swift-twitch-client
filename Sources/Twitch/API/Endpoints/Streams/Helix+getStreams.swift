@@ -40,6 +40,23 @@ public enum StreamType: String {
 }
 
 public struct Stream: Decodable {
+  public init(id: String, userId: String, userLogin: String, userName: String, gameID: String, gameName: String, type: String, title: String, language: String, tags: [String], isMature: Bool, viewerCount: Int, startedAt: Date, thumbnailURL: String) {
+    self.id = id
+    self.userId = userId
+    self.userLogin = userLogin
+    self.userName = userName
+    self.gameID = gameID
+    self.gameName = gameName
+    self.type = type
+    self.title = title
+    self.language = language
+    self.tags = tags
+    self.isMature = isMature
+    self.viewerCount = viewerCount
+    self.startedAt = startedAt
+    self.thumbnailURL = thumbnailURL
+  }
+    
   public let id: String
 
   public let userId: String

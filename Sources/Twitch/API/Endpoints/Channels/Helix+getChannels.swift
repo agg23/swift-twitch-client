@@ -18,6 +18,18 @@ extension Helix {
 }
 
 public struct Broadcaster: Decodable {
+  public init(id: String, login: String, name: String, language: String, gameID: String, gameName: String, title: String, delay: Int, tags: [String]) {
+    self.id = id
+    self.login = login
+    self.name = name
+    self.language = language
+    self.gameID = gameID
+    self.gameName = gameName
+    self.title = title
+    self.delay = delay
+    self.tags = tags
+  }
+    
   public let id: String
   public let login: String
   public let name: String

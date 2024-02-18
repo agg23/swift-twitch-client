@@ -23,6 +23,19 @@ extension Helix {
 }
 
 public struct User: Decodable {
+  public init(id: String, login: String, displayName: String, type: String, broadcasterType: User.BroadcasterType, description: String, profileImageUrl: String, offlineImageUrl: String, createdAt: Date, email: String? = nil) {
+    self.id = id
+    self.login = login
+    self.displayName = displayName
+    self.type = type
+    self.broadcasterType = broadcasterType
+    self.description = description
+    self.profileImageUrl = profileImageUrl
+    self.offlineImageUrl = offlineImageUrl
+    self.createdAt = createdAt
+    self.email = email
+  }
+    
   public let id: String
   public let login: String
   public let displayName: String
