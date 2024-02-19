@@ -24,10 +24,17 @@ extension Helix {
 }
 
 public struct Game: Decodable {
-  let id: String
-  let name: String
-  let boxArtUrl: String
-  let igdbId: String
+  public let id: String
+  public let name: String
+  public let boxArtUrl: String
+  public let igdbId: String
+
+  public init(id: String, name: String, boxArtUrl: String, igdbId: String) {
+    self.id = id
+    self.name = name
+    self.boxArtUrl = boxArtUrl
+    self.igdbId = igdbId
+  }
 
   enum CodingKeys: String, CodingKey {
     case id
