@@ -115,6 +115,14 @@ public final class Helix {
   }
 }
 
+extension Helix: Equatable {
+    public static func == (lhs: Helix, rhs: Helix) -> Bool {
+        return lhs.authentication.clientID == rhs.authentication.clientID &&
+            lhs.authentication.userId == rhs.authentication.userId &&
+            lhs.authentication.oAuth == rhs.authentication.oAuth
+    }
+}
+
 // the FoundationNetworking implementation for Linux doesn't have
 // async support yet so we need to implement it ourselves
 #if canImport(FoundationNetworking)
