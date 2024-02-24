@@ -38,6 +38,20 @@ public struct Channel: Decodable, Identifiable {
   public let title: String
   @NilOnTypeMismatch var startedAt: Date?
 
+  public init(id: String, login: String, name: String, language: String, gameID: String, gameName: String, isLive: Bool, tags: [String], profilePictureURL: String, title: String, startedAt: Date? = nil) {
+    self.id = id
+    self.login = login
+    self.name = name
+    self.language = language
+    self.gameID = gameID
+    self.gameName = gameName
+    self.isLive = isLive
+    self.tags = tags
+    self.profilePictureURL = profilePictureURL
+    self.title = title
+    self.startedAt = startedAt
+  }
+
   enum CodingKeys: String, CodingKey {
     case id
     case login = "broadcaster_login"
