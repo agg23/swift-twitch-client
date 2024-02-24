@@ -20,7 +20,7 @@ extension Helix {
   }
 }
 
-public struct Category: Decodable {
+public struct Category: Decodable, Identifiable {
   public let id: String
   public let name: String
   public let boxArtUrl: String

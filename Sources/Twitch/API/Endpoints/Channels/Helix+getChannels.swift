@@ -17,7 +17,7 @@ extension Helix {
   }
 }
 
-public struct Broadcaster: Decodable {
+public struct Broadcaster: Decodable, Identifiable {
   public init(id: String, login: String, name: String, language: String, gameID: String, gameName: String, title: String, delay: Int, tags: [String]) {
     self.id = id
     self.login = login

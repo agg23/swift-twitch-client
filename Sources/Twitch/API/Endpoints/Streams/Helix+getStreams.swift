@@ -39,7 +39,7 @@ public enum StreamType: String {
   case all
 }
 
-public struct Stream: Decodable {
+public struct Stream: Decodable, Identifiable {
   public init(id: String, userId: String, userLogin: String, userName: String, gameID: String, gameName: String, type: String, title: String, language: String, tags: [String], isMature: Bool, viewerCount: Int, startedAt: Date, thumbnailURL: String) {
     self.id = id
     self.userId = userId

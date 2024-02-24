@@ -23,7 +23,7 @@ extension Helix {
   }
 }
 
-public struct Game: Decodable {
+public struct Game: Decodable, Identifiable {
   public let id: String
   public let name: String
   public let boxArtUrl: String

@@ -22,7 +22,7 @@ extension Helix {
   }
 }
 
-public struct User: Decodable {
+public struct User: Decodable, Identifiable {
   public init(id: String, login: String, displayName: String, type: String, broadcasterType: User.BroadcasterType, description: String, profileImageUrl: String, offlineImageUrl: String, createdAt: Date, email: String? = nil) {
     self.id = id
     self.login = login
