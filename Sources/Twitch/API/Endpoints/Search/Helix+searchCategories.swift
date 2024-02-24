@@ -25,6 +25,16 @@ public struct Category: Decodable, Identifiable {
   public let name: String
   public let boxArtUrl: String
 
+  public init(id: String, name: String, boxArtUrl: String) {
+    self.id = id
+    self.name = name
+    self.boxArtUrl = boxArtUrl
+  }
+
+  public init(game: Game) {
+    self.init(id: game.id, name: game.name, boxArtUrl: game.boxArtUrl)
+  }
+
   enum CodingKeys: String, CodingKey {
     case id
     case name
