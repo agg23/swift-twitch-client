@@ -83,6 +83,24 @@ public struct VideoMutedSegment: Encodable, Decodable {
 }
 
 public struct Video: Encodable, Decodable, Identifiable {
+  public init(id: String, streamId: String? = nil, userId: String, userLogin: String, userName: String, title: String, description: String, createdAt: Date, publishedAt: Date, url: String, thumbnailUrl: String, viewCount: Int, language: String, type: VideoType, duration: String) {
+    self.id = id
+    self.streamId = streamId
+    self.userId = userId
+    self.userLogin = userLogin
+    self.userName = userName
+    self.title = title
+    self.description = description
+    self.createdAt = createdAt
+    self.publishedAt = publishedAt
+    self.url = url
+    self.thumbnailUrl = thumbnailUrl
+    self.viewCount = viewCount
+    self.language = language
+    self.type = type
+    self.duration = duration
+  }
+    
   public let id: String
 
   public let streamId: String?
