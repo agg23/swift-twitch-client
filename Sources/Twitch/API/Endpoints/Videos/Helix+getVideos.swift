@@ -106,7 +106,8 @@ public struct Video: Encodable, Decodable, Identifiable {
   public let type: VideoType
 
   public let duration: String
-  public let mutedSegments: [VideoMutedSegment]
+  // TODO: Re-enable
+  // public let mutedSegments: [VideoMutedSegment]
 
   enum CodingKeys: String, CodingKey {
     case id
@@ -132,6 +133,6 @@ public struct Video: Encodable, Decodable, Identifiable {
     case type
 
     case duration
-    case mutedSegments = "muted_segments"
+    // case mutedSegments = "muted_segments"
   }
 }
