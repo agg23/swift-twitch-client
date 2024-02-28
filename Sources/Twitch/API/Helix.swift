@@ -77,12 +77,12 @@ public final class Helix {
   }
 
   private func decode<T: Decodable>(_ data: Data) throws -> ((String, HelixData<T>)) {
-    let helixData = try? decoder.decode(HelixData<T>.self, from: data)
+    let helixData = try decoder.decode(HelixData<T>.self, from: data)
     let rawResponse = String(decoding: data, as: UTF8.self)
 
-    guard let helixData else {
-      throw HelixError.invalidResponse(rawResponse: rawResponse)
-    }
+//    guard let helixData else {
+//      throw HelixError.invalidResponse(rawResponse: rawResponse)
+//    }
 
     return (rawResponse, helixData)
   }
