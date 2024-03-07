@@ -69,7 +69,7 @@ public struct Stream: Encodable, Decodable, Identifiable {
   public let type: String
   public let title: String
   public let language: String
-  public let tags: [String]
+  public let tags: [String]?
   public let isMature: Bool
 
   public let viewerCount: Int
