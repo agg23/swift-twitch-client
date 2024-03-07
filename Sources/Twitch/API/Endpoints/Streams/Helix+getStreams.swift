@@ -40,7 +40,7 @@ public enum StreamType: String {
 }
 
 public struct Stream: Encodable, Decodable, Identifiable {
-  public init(id: String, userId: String, userLogin: String, userName: String, gameID: String, gameName: String, type: String, title: String, language: String, tags: [String], isMature: Bool, viewerCount: Int, startedAt: Date, thumbnailURL: String) {
+  public init(id: String, userId: String, userLogin: String, userName: String, gameID: String, gameName: String, type: String, title: String, language: String, tags: [String]?, isMature: Bool, viewerCount: Int, startedAt: Date, thumbnailURL: String) {
     self.id = id
     self.userId = userId
     self.userLogin = userLogin
