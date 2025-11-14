@@ -26,7 +26,7 @@ extension HelixEndpoint {
 }
 
 @MemberwiseInit(.public)
-public struct Channel: Decodable, Sendable {
+public struct Channel: Decodable, Identifiable, Sendable {
   public let id: String
   public let login: String
   public let name: String

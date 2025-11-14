@@ -1,11 +1,11 @@
-internal protocol EventSubHandler {
+internal protocol EventSubHandler: Sendable {
   func yield(_ event: Event)
   func finish()
   func finish(throwing error: EventSubError)
 }
 
 internal struct EventSubCallbackHandler<T: Sendable>: EventSubHandler {
-  var callback: (EventSubResult<T>) -> Void
+  var callback: @Sendable (EventSubResult<T>) -> Void
 
   func yield(_ event: Event) {
     if let event = event as? T {
@@ -39,7 +39,8 @@ internal struct EventSubContinuationHandler<T: Sendable>: EventSubHandler {
 #if canImport(Combine)
   import Combine
 
-  internal struct EventSubSubjectHandler<T: Sendable>: EventSubHandler {
+  // PassthroughSubject is not annotated Sendable
+  internal struct EventSubSubjectHandler<T: Sendable>: EventSubHandler, @unchecked Sendable {
     var subject: PassthroughSubject<T, EventSubError>
 
     func yield(_ event: Event) {

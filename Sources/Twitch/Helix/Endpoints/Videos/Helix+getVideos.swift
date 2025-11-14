@@ -59,7 +59,7 @@ public enum VideoTypeFilter: String, Sendable {
 }
 
 @MemberwiseInit(.public)
-public struct Video: Decodable, Sendable {
+public struct Video: Encodable, Decodable, Sendable {
   public let id: String
   public let streamID: String?
   public let userID: String
@@ -99,14 +99,14 @@ public struct Video: Decodable, Sendable {
   }
 }
 
-public enum VideoType: String, Decodable, Sendable {
+public enum VideoType: String, Encodable, Decodable, Sendable {
   case archive
   case highlight
   case upload
 }
 
 @MemberwiseInit(.public)
-public struct MutedSegment: Decodable, Sendable {
+public struct MutedSegment: Encodable, Decodable, Sendable {
   public let duration: Int
   public let offset: Int
 }

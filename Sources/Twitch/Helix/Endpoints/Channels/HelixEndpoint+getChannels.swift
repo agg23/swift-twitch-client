@@ -14,7 +14,7 @@ extension HelixEndpoint {
 }
 
 @MemberwiseInit(.public)
-public struct Broadcaster: Decodable, Sendable {
+public struct Broadcaster: Decodable, Identifiable, Sendable {
   public let id: String
   public let login: String
   public let name: String

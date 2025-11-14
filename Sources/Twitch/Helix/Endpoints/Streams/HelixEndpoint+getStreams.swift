@@ -39,7 +39,7 @@ public enum StreamType: String, Sendable {
 }
 
 @MemberwiseInit(.public)
-public struct Stream: Decodable, Sendable {
+public struct Stream: Encodable, Decodable, Identifiable, Sendable {
   public let id: String
 
   public let userID: String
@@ -52,7 +52,7 @@ public struct Stream: Decodable, Sendable {
   public let type: String
   public let title: String
   public let language: String
-  public let tags: [String]
+  public let tags: [String]?
   public let isMature: Bool
 
   public let viewerCount: Int

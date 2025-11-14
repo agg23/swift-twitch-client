@@ -23,7 +23,7 @@ extension HelixEndpoint {
 }
 
 @MemberwiseInit(.public)
-public struct Game: Decodable, Sendable {
+public struct Game: Decodable, Identifiable, Sendable {
   public let id: String
   public let name: String
   public let boxArtUrl: String

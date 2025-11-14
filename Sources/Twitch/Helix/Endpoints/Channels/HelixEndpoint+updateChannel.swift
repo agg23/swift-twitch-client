@@ -51,9 +51,9 @@ internal struct UpdateChannelRequestBody: Encodable, Sendable {
   let contentClassificationLabels: [Label]?
   let isBrandedContent: Bool?
 
-  struct Label: Encodable, Sendable {
-    let id: String
-    let isEnabled: Bool
+  public struct Label: Encodable, Sendable {
+    public let id: String
+    public let isEnabled: Bool
   }
 
   enum CodingKeys: String, CodingKey {
